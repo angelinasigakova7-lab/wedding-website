@@ -2,1025 +2,894 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna & Alex | Свадебный сайт</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Артем & Ангелина · 17.06.2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        /* ВАША ЦВЕТОВАЯ ГАММА */
+        :root {
+            --cream: #FAEBC2;
+            --champagne: #E0C18F;
+            --terracotta: #A7614B;
+            --bordeaux: #732A24;
+            --chocolate: #40211E;
+        }
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: #2d2d2d;
+            font-family: 'Playfair Display', serif;
+            background: #fff;
+            color: #000;
+            line-height: 1.5;
             overflow-x: hidden;
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        /* Параллакс секции */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-
-        /* Hero секция */
-        .hero {
-            height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3');
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            animation: fadeInUp 1.5s ease;
-        }
-
-        .hero h1 {
-            font-size: 80px;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            font-weight: 300;
-            margin-bottom: 40px;
-            letter-spacing: 8px;
-        }
-
-        .hero-date {
-            font-size: 24px;
-            border-top: 2px solid white;
-            border-bottom: 2px solid white;
-            padding: 15px 30px;
-            display: inline-block;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            cursor: pointer;
-        }
-
-        .scroll-down i {
-            font-size: 32px;
-            color: white;
-        }
-
-        /* Навигация */
-        .nav-bar {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            padding: 15px 0;
-        }
-
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            list-style: none;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #2d2d2d;
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #d4a5a5;
-            transition: width 0.3s;
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        /* Общие секции */
-        .section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 48px;
-            color: #2d2d2d;
-            margin-bottom: 15px;
-        }
-
-        .section-title .subtitle {
-            font-size: 18px;
-            color: #888;
-            font-style: italic;
-        }
-
-        .title-decoration {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .title-decoration i {
-            color: #d4a5a5;
-            font-size: 20px;
-        }
-
-        .title-decoration span {
-            width: 50px;
-            height: 2px;
-            background: #d4a5a5;
-        }
-
-        /* История пары */
-        .couple-story {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .story-photo {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .story-photo img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .story-photo:hover img {
-            transform: scale(1.05);
-        }
-
-        .story-text h3 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #2d2d2d;
-        }
-
-        .story-text p {
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            color: #d4a5a5;
-            margin-top: 30px;
-        }
-
-        /* Таймер */
-        .timer-section {
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-            text-align: center;
-        }
-
-        .timer-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .timer-block {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(212, 165, 165, 0.2);
-        }
-
-        .timer-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: #d4a5a5;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .timer-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 10px;
-        }
-
-        /* Детали мероприятия */
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .detail-card {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .detail-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .detail-icon i {
-            font-size: 32px;
-            color: #d4a5a5;
-        }
-
-        .detail-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .detail-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 5px;
-        }
-
-        .detail-time {
-            font-size: 14px;
-            color: #d4a5a5;
-            margin-top: 15px;
-        }
-
-        .map-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 25px;
-            background: #d4a5a5;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-
-        .map-button:hover {
-            background: #c48b8b;
-        }
-
-        /* Галерея */
-        .gallery {
-            background: #f9f9f9;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            cursor: pointer;
-            aspect-ratio: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(212, 165, 165, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: white;
-            font-size: 32px;
-        }
-
-        /* Форма RSVP */
-        .rsvp-section {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            color: white;
-        }
-
-        .rsvp-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.6);
-        }
-
-        .form-group select option {
-            background: #2d2d2d;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 30px;
-            margin: 10px 0;
-        }
-
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: #d4a5a5;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #c48b8b;
-        }
-
-        .success-message {
-            text-align: center;
-            padding: 20px;
-            background: #4caf50;
-            color: white;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
-        }
-
-        /* Подарки */
-        .gift-section {
-            background: white;
-        }
-
-        .gift-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .gift-card {
-            text-align: center;
-            padding: 40px 20px;
-            background: #f9f9f9;
-            border-radius: 20px;
-            transition: transform 0.3s;
-        }
-
-        .gift-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .gift-icon {
-            font-size: 48px;
-            color: #d4a5a5;
-            margin-bottom: 20px;
-        }
-
-        .gift-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .gift-card p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Футер */
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .footer-heart {
-            color: #d4a5a5;
-            font-size: 24px;
-            margin: 20px 0;
-            animation: heartbeat 1.5s ease infinite;
-        }
-
-        .footer p {
-            color: #999;
-            font-size: 14px;
-            margin: 5px 0;
-        }
-
-        /* Анимации */
+        
+        /* АНИМАЦИИ */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-30px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-15px);
-            }
+        
+        @keyframes gentleShake {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
         }
-
-        @keyframes heartbeat {
+        
+        @keyframes pulse {
             0% { transform: scale(1); }
-            14% { transform: scale(1.3); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.3); }
-            70% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
-
-        /* Ленивая загрузка */
-        .fade-in {
+        
+        @keyframes shimmer {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.15; }
+            100% { opacity: 0.1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.02); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        /* Бургер-меню */
+        .header {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+        }
+        
+        .burger {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            animation: gentleShake 5s infinite ease-in-out;
+        }
+        
+        .burger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        
+        .burger span {
+            width: 22px;
+            height: 2px;
+            background: black;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        
+        .burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .burger.active span:nth-child(2) { opacity: 0; }
+        .burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 280px;
+            height: 100vh;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .menu-overlay.active { right: 0; }
+        .menu-overlay ul { list-style: none; text-align: center; }
+        .menu-overlay li { margin: 24px 0; }
+        .menu-overlay a {
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .menu-overlay a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+        
+        .menu-overlay a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-overlay a:hover {
+            color: var(--terracotta);
+        }
+        
+        /* Секции */
+        section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s, transform 0.6s;
+            animation: fadeInUp 1s ease forwards;
         }
-
-        .fade-in.appear {
-            opacity: 1;
-            transform: translateY(0);
+        
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.6s; }
+        section:nth-child(5) { animation-delay: 0.8s; }
+        section:nth-child(6) { animation-delay: 1s; }
+        section:nth-child(7) { animation-delay: 1.2s; }
+        
+        /* Только для первой и последней секции оставил высоту экрана */
+        .hero, .final {
+            min-height: 100vh;
+            padding: 0;
         }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h2 {
-                font-size: 20px;
-                letter-spacing: 4px;
-            }
-
-            .nav-menu {
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-
-            .couple-story,
-            .details-grid,
-            .gallery-grid,
-            .gift-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .section {
-                padding: 60px 20px;
-            }
-
-            .section-title h2 {
-                font-size: 36px;
-            }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
         }
-
-        @media (max-width: 480px) {
-            .timer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .radio-group {
-                flex-direction: column;
-                gap: 10px;
-            }
+        
+        /* Главная (banner.jpg) */
+        .hero {
+            background: #000;
+            color: #fff;
+            justify-content: flex-start;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: grayscale(100%);
+            transition: transform 8s ease;
+        }
+        
+        .hero:hover .hero-image img {
+            transform: scale(1.05);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0) 20%, #000 80%);
+            z-index: 2;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-top: 20vh;
+        }
+        
+        .invitation {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            animation: fadeInUp 1.5s ease;
+        }
+        
+        .date {
+            font-size: 18px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 15px;
+            animation: fadeInUp 1.5s ease 0.2s both;
+        }
+        
+        .names {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1.5s ease 0.4s both;
+        }
+        
+        .names span { 
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .names span:hover {
+            transform: scale(1.02);
+            color: var(--cream);
+        }
+        
+        .ampersand {
+            font-size: 200px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+            line-height: 1;
+            animation: shimmer 4s infinite ease-in-out;
+        }
+        
+        /* Локация (locaya.jfif) */
+        .location {
+            background: #fff;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .section-title:hover {
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+        }
+        
+        .location-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .address p {
+            font-size: 20px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .address p:hover {
+            transform: translateX(5px);
+            color: var(--terracotta);
+        }
+        
+        .address .small {
+            font-size: 16px;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .location-photo {
+            width: 100%;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .location-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .location-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .location-photo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .day-info {
+            font-size: 18px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .day-info:hover {
+            color: var(--terracotta);
+        }
+        
+        /* Программа (programa.jfif) */
+        .schedule {
+            background: #fff;
+        }
+        
+        .schedule-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .schedule-item {
+            transition: all 0.3s ease;
+        }
+        
+        .schedule-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .schedule-item .time {
+            font-size: 28px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .schedule-item:hover .time {
+            color: var(--terracotta);
+        }
+        
+        .schedule-item .desc {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 18px;
+            margin-top: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .schedule-item:hover .desc {
+            background: var(--cream);
+            transform: scale(1.02);
+        }
+        
+        .schedule-photo {
+            width: 100%;
+            height: 240px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .schedule-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .schedule-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .schedule-photo:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Дресс-код с ВАШИМИ ЦВЕТАМИ */
+        .dresscode {
+            background: #f8f8f8;
+            text-align: center;
+        }
+        
+        .dresscode p {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0 5px;
+        }
+        
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .circle:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        /* Применяем ваши цвета к кружкам */
+        .cream { background: var(--cream); }
+        .champagne { background: var(--champagne); }
+        .terracotta { background: var(--terracotta); }
+        .bordeaux { background: var(--bordeaux); }
+        .chocolate { background: var(--chocolate); }
+        
+        /* Подписи под цветами */
+        .color-names {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+            color: #555;
+        }
+        
+        .color-names span {
+            width: 70px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .color-names span:hover {
+            color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        
+        /* Таймер (time.png) */
+        .countdown {
+            background: #fff;
+            text-align: center;
+        }
+        
+        .countdown-photo {
+            width: 100%;
+            height: 200px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .countdown-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .countdown-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .countdown-photo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .timer-item {
+            min-width: 70px;
+        }
+        
+        .timer-number {
+            background: black;
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            padding: 10px 5px;
+            border-radius: 16px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .timer-number:hover {
+            background: var(--terracotta);
+            transform: scale(1.05);
+        }
+        
+        .timer-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .timer-label:hover {
+            color: var(--terracotta);
+        }
+        
+        /* Блок подтверждения (без формы) */
+        .response {
+            background: #fff;
+            text-align: center;
+        }
+        
+        .response p {
+            font-size: 20px;
+            margin: 15px 0;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+        
+        .response p:hover {
+            transform: scale(1.02);
+            color: var(--terracotta);
+        }
+        
+        .response .contacts {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 20px 0;
+            word-break: break-word;
+        }
+        
+        .response .contacts a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .response .contacts a:hover {
+            color: var(--terracotta);
+            border-bottom-color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        
+        .gift-note {
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .gift-note:hover {
+            color: var(--terracotta);
+            transform: scale(1.02);
+        }
+        
+        /* Финал (poslednyaya.jfif) */
+        .final {
+            background: #000;
+            color: #fff;
+            justify-content: flex-start;
+        }
+        
+        .final-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+        
+        .final-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform 8s ease;
+        }
+        
+        .final:hover .final-image img {
+            transform: scale(1.05);
+        }
+        
+        .final-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+        
+        .final .container {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-top: 25vh;
+        }
+        
+        .final-text {
+            font-size: 48px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1.5s ease, pulse 3s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .final-text:hover {
+            transform: scale(1.05);
+            color: var(--cream);
+        }
+        
+        .footer {
+            margin-top: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .footer:hover {
+            color: var(--cream);
+        }
+        
+        /* Адаптация */
+        @media (max-width: 380px) {
+            .names { font-size: 42px; }
+            .ampersand { font-size: 160px; }
+            .section-title { font-size: 30px; }
+            .circle { width: 55px; height: 55px; }
+            .color-names span { width: 55px; font-size: 10px; }
+            .timer-number { font-size: 28px; min-width: 60px; }
+            .timer-item { min-width: 60px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero секция -->
-    <section class="hero parallax">
-        <div class="hero-content">
-            <h1>Anna & Alex</h1>
-            <h2>СОЕДИНЯЕМ СЕРДЦА</h2>
-            <div class="hero-date">15 ИЮНЯ 2024</div>
-        </div>
-        <div class="scroll-down" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
 
-    <!-- Навигация -->
-    <nav class="nav-bar">
-        <ul class="nav-menu">
-            <li><a href="#story">История</a></li>
-            <li><a href="#details">Детали</a></li>
-            <li><a href="#gallery">Галерея</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
-            <li><a href="#gifts">Подарки</a></li>
-        </ul>
-    </nav>
+<div class="header">
+    <div class="burger" id="burger">
+        <span></span><span></span><span></span>
+    </div>
+</div>
+<div class="menu-overlay" id="menu">
+    <ul>
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#location">Локация</a></li>
+        <li><a href="#schedule">Программа</a></li>
+        <li><a href="#dresscode">Дресс-код</a></li>
+        <li><a href="#countdown">Таймер</a></li>
+        <li><a href="#response">Подтверждение</a></li>
+    </ul>
+</div>
 
-    <!-- История пары -->
-    <section id="story" class="section">
-        <div class="section-title">
-            <h2>Наша история</h2>
-            <div class="title-decoration">
-                <span></span>
-                <i class="fas fa-heart"></i>
-                <span></span>
-            </div>
-            <p class="subtitle">Как все начиналось</p>
+<!-- 1. ГЛАВНАЯ banner.jpg -->
+<section id="hero" class="hero">
+    <div class="hero-image">
+        <img src="banner.jpg" alt="Артем и Ангелина">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="invitation">Приглашаем вас на нашу свадьбу</div>
+        <div class="date">17 / 06 / 2026</div>
+        <div class="names">
+            <span>АРТЕМ</span>
+            <span>АНГЕЛИНА</span>
+            <div class="ampersand">&</div>
         </div>
-        
-        <div class="couple-story">
-            <div class="story-photo fade-in">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&w=600" alt="Anna & Alex">
-            </div>
-            <div class="story-text fade-in">
-                <h3>Анна и Александр</h3>
-                <p>Мы встретились три года назад в кофейне рядом с университетом. Алекс заказал капучино, а я - латте. Наши напитки перепутали, и это стало началом нашей истории.</p>
-                <p>С тех пор мы не расставались. Путешествия, совместные проекты, поддержка друг друга во всем - и вот, спустя три года, мы готовы сказать друг другу "Да".</p>
-                <p>Мы верим, что настоящая любовь - это когда два человека становятся лучше вместе. И мы хотим разделить этот важный день с самыми близкими людьми - с вами.</p>
-                <div class="signature">Anna & Alex</div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Таймер -->
-    <section class="timer-section section">
-        <div class="timer-container">
-            <div class="section-title">
-                <h2 style="color: #2d2d2d;">До важного дня</h2>
+<!-- 2. ЛОКАЦИЯ locaya.jfif -->
+<section id="location" class="location">
+    <div class="container">
+        <h2 class="section-title">ЛОКАЦИЯ</h2>
+        <div class="location-grid">
+            <div class="address">
+                <p>Ресторан «Мадагаскар»</p>
+                <p class="small">Омская область, рабочий посёлок Таврическое</p>
+                <p class="small">Советская улица, 40</p>
             </div>
-            <div class="timer-grid">
-                <div class="timer-block">
-                    <div class="timer-number" id="days">00</div>
-                    <div class="timer-label">Дней</div>
-                </div>
-                <div class="timer-block">
-                    <div class="timer-number" id="hours">00</div>
-                    <div class="timer-label">Часов</div>
-                </div>
-                <div class="timer-block">
-                    <div class="timer-number" id="minutes">00</div>
-                    <div class="timer-label">Минут</div>
-                </div>
-                <div class="timer-block">
-                    <div class="timer-number" id="seconds">00</div>
-                    <div class="timer-label">Секунд</div>
-                </div>
+            <div class="location-photo">
+                <img src="locaya.jfif" alt="Ресторан Мадагаскар">
             </div>
+            <div class="day-info">Среда, 17 июня 2026 · Сбор в 14:30</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Детали мероприятия -->
-    <section id="details" class="section">
-        <div class="section-title">
-            <h2>Детали мероприятия</h2>
-            <div class="title-decoration">
-                <span></span>
-                <i class="fas fa-calendar-alt"></i>
-                <span></span>
+<!-- 3. ПРОГРАММА programa.jfif -->
+<section id="schedule" class="schedule">
+    <div class="container">
+        <h2 class="section-title">ПРОГРАММА ДНЯ</h2>
+        <div class="schedule-grid">
+            <div class="schedule-list">
+                <div class="schedule-item">
+                    <div class="time">11:40</div>
+                    <div class="desc">Регистрация в ЗАГСе</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">14:30</div>
+                    <div class="desc">Церемония</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">15:00</div>
+                    <div class="desc">Банкет</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">18:00</div>
+                    <div class="desc">Торт & танцы</div>
+                </div>
+            </div>
+            <div class="schedule-photo">
+                <img src="programa.jfif" alt="Атмосфера праздника">
             </div>
         </div>
-        
-        <div class="details-grid">
-            <div class="detail-card fade-in">
-                <div class="detail-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
-                <h3>Дата и время</h3>
-                <p>15 июня 2024</p>
-                <p>Сбор гостей: 16:30</p>
-                <p>Церемония: 17:00</p>
-                <p class="detail-time">Пожалуйста, приходите вовремя</p>
-            </div>
-            
-            <div class="detail-card fade-in">
-                <div class="detail-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>Место проведения</h3>
-                <p>Ресторан "Кристалл"</p>
-                <p>ул. Пушкина, 10</p>
-                <p>Москва</p>
-                <a href="#" class="map-button">Открыть карту</a>
-            </div>
-            
-            <div class="detail-card fade-in">
-                <div class="detail-icon">
-                    <i class="fas fa-glass-cheers"></i>
-                </div>
-                <h3>Программа вечера</h3>
-                <p>17:00 - Церемония</p>
-                <p>18:00 - Фуршет</p>
-                <p>19:00 - Ужин и танцы</p>
-                <p>23:00 - Фейерверк</p>
-            </div>
-            
-            <div class="detail-card fade-in">
-                <div class="detail-icon">
-                    <i class="fas fa-tshirt"></i>
-                </div>
-                <h3>Дресс-код</h3>
-                <p>Формальный стиль</p>
-                <p>Рекомендуем:</p>
-                <p>Девушкам: вечерние платья</p>
-                <p>Мужчинам: костюмы</p>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Галерея -->
-    <section id="gallery" class="gallery section">
-        <div class="section-title">
-            <h2>Фотогалерея</h2>
-            <div class="title-decoration">
-                <span></span>
-                <i class="fas fa-camera"></i>
-                <span></span>
-            </div>
-            <p class="subtitle">Моменты нашей любви</p>
+<!-- 4. ДРЕСС-КОД с вашими цветами -->
+<section id="dresscode" class="dresscode">
+    <div class="container">
+        <h2 class="section-title">ДРЕСС-КОД</h2>
+        <p>Будем признательны,<br>если в своих нарядах вы поддержите<br>цветовую гамму нашей свадьбы</p>
+        <div class="colors">
+            <div class="circle cream" title="Cream"></div>
+            <div class="circle champagne" title="Champagne"></div>
+            <div class="circle terracotta" title="Terracotta"></div>
+            <div class="circle bordeaux" title="Bordeaux"></div>
+            <div class="circle chocolate" title="Chocolate"></div>
         </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&w=400" alt="Фото 1">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&w=400" alt="Фото 2">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&w=400" alt="Фото 3">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&w=400" alt="Фото 4">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&w=400" alt="Фото 5">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://images.unsplash.com/photo-1522673607200-164d1b3ce5a1?ixlib=rb-4.0.3&w=400" alt="Фото 6">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
+        <div class="color-names">
+            <span>Cream</span>
+            <span>Champagne</span>
+            <span>Terracotta</span>
+            <span>Bordeaux</span>
+            <span>Chocolate</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- RSVP форма -->
-    <section id="rsvp" class="rsvp-section section">
-        <div class="section-title">
-            <h2 style="color: white;">Подтвердите участие</h2>
-            <div class="title-decoration">
-                <span style="background: white;"></span>
-                <i class="fas fa-envelope" style="color: white;"></i>
-                <span style="background: white;"></span>
-            </div>
-            <p class="subtitle" style="color: rgba(255,255,255,0.8);">Пожалуйста, ответьте до 1 мая 2024</p>
+<!-- 5. ТАЙМЕР time.png -->
+<section id="countdown" class="countdown">
+    <div class="container">
+        <h2 class="section-title">ДО СВАДЬБЫ</h2>
+        <div class="countdown-photo">
+            <img src="time.png" alt="Обратный отсчет">
         </div>
-        
-        <div class="rsvp-form">
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="" disabled selected>Количество гостей</option>
-                        <option value="1">1 гость</option>
-                        <option value="2">2 гостя</option>
-                        <option value="3">3 гостя</option>
-                        <option value="4">4 гостя</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="attendance" value="yes" checked> Буду
-                        </label>
-                        <label>
-                            <input type="radio" name="attendance" value="no"> Не смогу
-                        </label>
-                        <label>
-                            <input type="radio" name="attendance" value="maybe"> Возможно
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <textarea rows="3" placeholder="Пожелания или особые требования"></textarea>
-                </div>
-                <button type="button" class="submit-btn" onclick="submitRSVP()">
-                    Отправить подтверждение
-                </button>
-            </form>
-            <div id="successMessage" class="success-message">
-                <i class="fas fa-check-circle"></i>
-                Спасибо! Мы получили ваше подтверждение.
-            </div>
+        <div class="timer" id="timer">
+            <div class="timer-item"><div class="timer-number" id="days">00</div><div class="timer-label">Дней</div></div>
+            <div class="timer-item"><div class="timer-number" id="hours">00</div><div class="timer-label">Часов</div></div>
+            <div class="timer-item"><div class="timer-number" id="minutes">00</div><div class="timer-label">Минут</div></div>
+            <div class="timer-item"><div class="timer-number" id="seconds">00</div><div class="timer-label">Секунд</div></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Подарки -->
-    <section id="gifts" class="gift-section section">
-        <div class="section-title">
-            <h2>Подарки</h2>
-            <div class="title-decoration">
-                <span></span>
-                <i class="fas fa-gift"></i>
-                <span></span>
-            </div>
-            <p class="subtitle">Самое главное - вы будете с нами, но если хотите порадовать нас:</p>
+<!-- 6. ПОДТВЕРЖДЕНИЕ (ответ в чате) -->
+<section id="response" class="response">
+    <div class="container">
+        <h2 class="section-title">ПОДТВЕРЖДЕНИЕ</h2>
+        <p>Пожалуйста, напишите нам в этот чат,<br>сможете ли вы быть.</p>
+        <div class="contacts">
+            <a href="+7(951)-415-78-43">MAX</a> · <a href="https://t.me/austexx">Telegram</a>
         </div>
-        
-        <div class="gift-grid">
-            <div class="gift-card fade-in">
-                <div class="gift-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3>Для дома</h3>
-                <p>Посуда, текстиль, декор</p>
-            </div>
-            <div class="gift-card fade-in">
-                <div class="gift-icon">
-                    <i class="fas fa-umbrella-beach"></i>
-                </div>
-                <h3>Путешествия</h3>
-                <p>Сертификаты на отдых</p>
-            </div>
-            <div class="gift-card fade-in">
-                <div class="gift-icon">
-                    <i class="fas fa-coffee"></i>
-                </div>
-                <h3>Техника</h3>
-                <p>Кофемашина, мультиварка</p>
-            </div>
+        <p>Или просто ответьте на это сообщение.</p>
+        <div class="gift-note">
+            Если вы захотите порадовать нас подарком,<br>мы будем рады любому вложению в конверте.
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <p style="color: #d4a5a5;">Или просто подарите конвертик 💝</p>
+    </div>
+</section>
+
+<!-- 7. ФИНАЛ poslednyaya.jfif -->
+<section id="final" class="final">
+    <div class="final-image">
+        <img src="poslednyaya.jfif" alt="Ждем вас">
+    </div>
+    <div class="final-overlay"></div>
+    <div class="container">
+        <div class="final-text">Ждем вас!</div>
+        <div class="footer">
+            <p>17 июня 2026 · Таврическое</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Футер -->
-    <footer class="footer">
-        <div class="footer-heart">
-            <i class="fas fa-heart"></i>
-        </div>
-        <p>Anna & Alex</p>
-        <p>15 июня 2024</p>
-        <p style="margin-top: 20px;">С нетерпением ждем встречи!</p>
-    </footer>
+<script>
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+    document.querySelectorAll('.menu-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
 
-    <script>
-        // Таймер обратного отсчета
-        function updateTimer() {
-            const weddingDate = new Date('June 15, 2024 17:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days < 10 ? '0' + days : days;
-            document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
-            document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+    // Таймер до 17 июня 2026 23:59:59
+    const wedding = new Date(2026, 5, 17, 23, 59, 59);
+    function updateTimer() {
+        const now = new Date();
+        const diff = wedding - now;
+        if (diff <= 0) {
+            document.getElementById('days').innerText = '00';
+            document.getElementById('hours').innerText = '00';
+            document.getElementById('minutes').innerText = '00';
+            document.getElementById('seconds').innerText = '00';
+            return;
         }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Анимация появления при скролле
-        function checkFade() {
-            const fades = document.querySelectorAll('.fade-in');
-            const triggerBottom = window.innerHeight * 0.8;
-
-            fades.forEach(fade => {
-                const fadeTop = fade.getBoundingClientRect().top;
-                if (fadeTop < triggerBottom) {
-                    fade.classList.add('appear');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkFade);
-        window.addEventListener('load', checkFade);
-
-        // Активный пункт меню
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-menu a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Плавный скролл для навигации
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // RSVP форма
-        function submitRSVP() {
-            const form = document.getElementById('rsvpForm');
-            const message = document.getElementById('successMessage');
-            
-            // Простая валидация
-            const inputs = form.querySelectorAll('input[required], select[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value) {
-                    isValid = false;
-                    input.style.border = '1px solid red';
-                } else {
-                    input.style.border = '1px solid rgba(255,255,255,0.2)';
-                }
-            });
-
-            if (isValid) {
-                message.style.display = 'block';
-                form.reset();
-                setTimeout(() => {
-                    message.style.display = 'none';
-                }, 5000);
-            } else {
-                alert('Пожалуйста, заполните все поля');
-            }
-        }
-
-        // Галерея (упрощенный лайтбокс)
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const img = this.querySelector('img').src;
-                // Здесь можно добавить лайтбокс
-                console.log('Open image:', img);
-            });
-        });
-
-        // Параллакс эффект для hero
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
-        });
-    </script>
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        document.getElementById('days').innerText = days.toString().padStart(2,'0');
+        document.getElementById('hours').innerText = hours.toString().padStart(2,'0');
+        document.getElementById('minutes').innerText = minutes.toString().padStart(2,'0');
+        document.getElementById('seconds').innerText = seconds.toString().padStart(2,'0');
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
 </body>
 </html>
