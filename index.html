@@ -195,96 +195,99 @@
             width: 100%;
         }
         
-        /* Главная (banner.jpg) */
-        .hero {
-            background: #000;
-            color: #fff;
-            justify-content: flex-start;
-        }
-        
-        .hero-image {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-        }
-        
-        .hero-image img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-            filter: grayscale(100%);
-            transition: transform 8s ease;
-        }
-        
-        .hero:hover .hero-image img {
-            transform: scale(1.05);
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0) 20%, #000 80%);
-            z-index: 2;
-        }
-        
-        .hero .container {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            margin-top: 20vh;
-        }
-        
-        .invitation {
-            font-size: 18px;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            margin-bottom: 15px;
-            color: rgba(255,255,255,0.9);
-            text-transform: uppercase;
-            animation: fadeInUp 1.5s ease;
-        }
-        
-        .date {
-            font-size: 18px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            font-weight: 300;
-            margin-bottom: 15px;
-            animation: fadeInUp 1.5s ease 0.2s both;
-        }
-        
-        .names {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.1;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-            animation: fadeInUp 1.5s ease 0.4s both;
-        }
-        
-        .names span { 
-            display: block;
-            transition: all 0.3s ease;
-        }
-        
-        .names span:hover {
-            transform: scale(1.02);
-            color: var(--cream);
-        }
-        
-        .ampersand {
-            font-size: 200px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.1);
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            pointer-events: none;
-            line-height: 1;
-            animation: shimmer 4s infinite ease-in-out;
-        }
+/* Главная (banner.jpg) */
+.hero {
+    background: #000;
+    color: #fff;
+    justify-content: flex-start;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: grayscale(100%);
+    transition: transform 8s ease;
+}
+
+.hero:hover .hero-image img {
+    transform: scale(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 6vh; /* Текст вверху */
+}
+
+.invitation {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+    animation: fadeInUp 1.5s ease;
+}
+
+.date {
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 15px;
+    animation: fadeInUp 1.5s ease 0.2s both;
+}
+
+.names {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    animation: fadeInUp 1.5s ease 0.4s both;
+}
+
+.names span { 
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.names span:hover {
+    transform: scale(1.02);
+    color: var(--cream);
+}
+
+.ampersand {
+    font-size: 200px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+    animation: shimmer 4s infinite ease-in-out;
+}
         
         /* Локация (locaya.jfif) */
         .location {
@@ -292,7 +295,7 @@
         }
         
         .section-title {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 500;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -751,7 +754,7 @@
             <div class="location-photo">
                 <img src="locaya.jfif" alt="Ресторан Мадагаскар">
             </div>
-            <div class="day-info">Среда, 17 июня 2026 · Сбор в 14:30</div>
+            <div class="day-info">· Среда, 17 июня 2026  <br>· Начало торжества в 14:30</div>
         </div>
     </div>
 </section>
@@ -830,7 +833,7 @@
         <h2 class="section-title">ПОДТВЕРЖДЕНИЕ</h2>
         <p>Пожалуйста, напишите нам в этот чат,<br>сможете ли вы быть.</p>
         <div class="contacts">
-            <a href="+7(951)-415-78-43">MAX</a> · <a href="https://t.me/austexx">Telegram</a>
+            <a href="+7(951)-415-78-43">+7(951)-415-78-43</a> · <a href="https://t.me/austexx">Telegram</a>
         </div>
         <p>Или просто ответьте на это сообщение.</p>
         <div class="gift-note">
