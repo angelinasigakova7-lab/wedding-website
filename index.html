@@ -14,13 +14,13 @@
             box-sizing: border-box;
         }
         
-        /* ВАША ЦВЕТОВАЯ ГАММА */
+        /* ВАША НОВАЯ ЦВЕТОВАЯ ГАММА ДЛЯ ДРЕСС-КОДА */
         :root {
-            --cream: #FAEBC2;
-            --champagne: #E0C18F;
-            --terracotta: #A7614B;
-            --bordeaux: #732A24;
-            --chocolate: #40211E;
+            --color1: #D6C8BD;
+            --color2: #B59B8E;
+            --color3: #B46F58;
+            --color4: #732A24;
+            --color5: #40211E;
         }
         
         html {
@@ -63,12 +63,6 @@
             0% { opacity: 0.1; }
             50% { opacity: 0.15; }
             100% { opacity: 0.1; }
-        }
-        
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.02); }
-            100% { transform: translate(-50%, -50%) scale(1); }
         }
         
         /* Бургер-меню */
@@ -152,7 +146,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--terracotta);
+            background: var(--color3);
             transition: width 0.3s ease;
         }
         
@@ -161,7 +155,7 @@
         }
         
         .menu-overlay a:hover {
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
         /* Секции */
@@ -195,101 +189,101 @@
             width: 100%;
         }
         
-/* Главная (banner.jpg) */
-.hero {
-    background: #000;
-    color: #fff;
-    justify-content: flex-start;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1;
-}
-
-.hero-image img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    filter: grayscale(100%);
-    transition: transform 8s ease;
-}
-
-.hero:hover .hero-image img {
-    transform: scale(1.05);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-    z-index: 2;
-}
-
-.hero .container {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    margin-top: 6vh; /* Текст вверху */
-}
-
-.invitation {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    margin-bottom: 15px;
-    color: rgba(255,255,255,0.9);
-    text-transform: uppercase;
-    animation: fadeInUp 1.5s ease;
-}
-
-.date {
-    font-size: 18px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-bottom: 15px;
-    animation: fadeInUp 1.5s ease 0.2s both;
-}
-
-.names {
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: uppercase;
-    position: relative;
-    display: inline-block;
-    animation: fadeInUp 1.5s ease 0.4s both;
-}
-
-.names span { 
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.names span:hover {
-    transform: scale(1.02);
-    color: var(--cream);
-}
-
-.ampersand {
-    font-size: 200px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.1);
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    pointer-events: none;
-    line-height: 1;
-    animation: shimmer 4s infinite ease-in-out;
-}
+        /* Главная (banner.jpg) */
+        .hero {
+            background: #000;
+            color: #fff;
+            justify-content: flex-start;
+        }
         
-        /* Локация (locaya.jfif) */
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: grayscale(100%);
+            transition: transform 8s ease;
+        }
+        
+        .hero:hover .hero-image img {
+            transform: scale(1.05);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 2;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-top: 6vh;
+        }
+        
+        .invitation {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            animation: fadeInUp 1.5s ease;
+        }
+        
+        .date {
+            font-size: 18px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 15px;
+            animation: fadeInUp 1.5s ease 0.2s both;
+        }
+        
+        .names {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1.5s ease 0.4s both;
+        }
+        
+        .names span { 
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .names span:hover {
+            transform: scale(1.02);
+            color: var(--color1);
+        }
+        
+        .ampersand {
+            font-size: 200px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+            line-height: 1;
+            animation: shimmer 4s infinite ease-in-out;
+        }
+        
+        /* Локация */
         .location {
             background: #fff;
         }
@@ -306,7 +300,7 @@
         
         .section-title:hover {
             letter-spacing: 0.2em;
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
         .location-grid {
@@ -323,7 +317,7 @@
         
         .address p:hover {
             transform: translateX(5px);
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
         .address .small {
@@ -364,10 +358,10 @@
         }
         
         .day-info:hover {
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
-        /* Программа (programa.jfif) */
+        /* Программа */
         .schedule {
             background: #fff;
         }
@@ -399,7 +393,7 @@
         }
         
         .schedule-item:hover .time {
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
         .schedule-item .desc {
@@ -413,7 +407,7 @@
         }
         
         .schedule-item:hover .desc {
-            background: var(--cream);
+            background: var(--color1);
             transform: scale(1.02);
         }
         
@@ -442,7 +436,7 @@
             transform: scale(1.05);
         }
         
-        /* Дресс-код с ВАШИМИ ЦВЕТАМИ */
+        /* Дресс-код с НОВЫМИ ЦВЕТАМИ */
         .dresscode {
             background: #f8f8f8;
             text-align: center;
@@ -476,12 +470,12 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
         
-        /* Применяем ваши цвета к кружкам */
-        .cream { background: var(--cream); }
-        .champagne { background: var(--champagne); }
-        .terracotta { background: var(--terracotta); }
-        .bordeaux { background: var(--bordeaux); }
-        .chocolate { background: var(--chocolate); }
+        /* Новая цветовая гамма кружков */
+        .color1 { background: var(--color1); }
+        .color2 { background: var(--color2); }
+        .color3 { background: var(--color3); }
+        .color4 { background: var(--color4); }
+        .color5 { background: var(--color5); }
         
         /* Подписи под цветами */
         .color-names {
@@ -502,11 +496,11 @@
         }
         
         .color-names span:hover {
-            color: var(--terracotta);
+            color: var(--color3);
             transform: translateY(-2px);
         }
         
-        /* Таймер (time.png) */
+        /* Таймер */
         .countdown {
             background: #fff;
             text-align: center;
@@ -562,7 +556,7 @@
         }
         
         .timer-number:hover {
-            background: var(--terracotta);
+            background: var(--color3);
             transform: scale(1.05);
         }
         
@@ -575,10 +569,10 @@
         }
         
         .timer-label:hover {
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
-        /* Блок подтверждения (без формы) */
+        /* Блок подтверждения */
         .response {
             background: #fff;
             text-align: center;
@@ -593,7 +587,7 @@
         
         .response p:hover {
             transform: scale(1.02);
-            color: var(--terracotta);
+            color: var(--color3);
         }
         
         .response .contacts {
@@ -613,8 +607,8 @@
         }
         
         .response .contacts a:hover {
-            color: var(--terracotta);
-            border-bottom-color: var(--terracotta);
+            color: var(--color3);
+            border-bottom-color: var(--color3);
             transform: translateY(-2px);
         }
         
@@ -627,11 +621,11 @@
         }
         
         .gift-note:hover {
-            color: var(--terracotta);
+            color: var(--color3);
             transform: scale(1.02);
         }
         
-        /* Финал (poslednyaya.jfif) */
+        /* Финал */
         .final {
             background: #000;
             color: #fff;
@@ -679,7 +673,7 @@
         
         .final-text:hover {
             transform: scale(1.05);
-            color: var(--cream);
+            color: var(--color1);
         }
         
         .footer {
@@ -691,7 +685,7 @@
         }
         
         .footer:hover {
-            color: var(--cream);
+            color: var(--color1);
         }
         
         /* Адаптация */
@@ -789,24 +783,24 @@
     </div>
 </section>
 
-<!-- 4. ДРЕСС-КОД с вашими цветами -->
+<!-- 4. ДРЕСС-КОД с новыми цветами -->
 <section id="dresscode" class="dresscode">
     <div class="container">
         <h2 class="section-title">ДРЕСС-КОД</h2>
         <p>Будем признательны,<br>если в своих нарядах вы поддержите<br>цветовую гамму нашей свадьбы</p>
         <div class="colors">
-            <div class="circle cream" title="Cream"></div>
-            <div class="circle champagne" title="Champagne"></div>
-            <div class="circle terracotta" title="Terracotta"></div>
-            <div class="circle bordeaux" title="Bordeaux"></div>
-            <div class="circle chocolate" title="Chocolate"></div>
+            <div class="circle color1" title="Пудровый"></div>
+            <div class="circle color2" title="Бежевый"></div>
+            <div class="circle color3" title="Терракотовый"></div>
+            <div class="circle color4" title="Бордовый"></div>
+            <div class="circle color5" title="Шоколадный"></div>
         </div>
         <div class="color-names">
-            <span>Cream</span>
-            <span>Champagne</span>
-            <span>Terracotta</span>
-            <span>Bordeaux</span>
-            <span>Chocolate</span>
+            <span>Пудровый</span>
+            <span>Бежевый</span>
+            <span>Терракотовый</span>
+            <span>Бордовый</span>
+            <span>Шоколадный</span>
         </div>
     </div>
 </section>
@@ -833,7 +827,7 @@
         <h2 class="section-title">ПОДТВЕРЖДЕНИЕ</h2>
         <p>Пожалуйста, напишите нам в этот чат,<br>сможете ли вы быть.</p>
         <div class="contacts">
-            <a href="+7(951)-415-78-43">+7(951)-415-78-43</a> · <a href="https://t.me/austexx">Telegram</a>
+            <a href="tel:+79514157843">+7(951)-415-78-43</a> · <a href="https://t.me/austexx">Telegram</a>
         </div>
         <p>Или просто ответьте на это сообщение.</p>
         <div class="gift-note">
